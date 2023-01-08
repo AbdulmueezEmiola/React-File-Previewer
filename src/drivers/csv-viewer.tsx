@@ -6,7 +6,7 @@ import CSV from 'comma-separated-values'
 interface Props {
   data: string
   onError: ReactEventHandler<HTMLAudioElement>
-  onLoad: Function
+  onLoad: () => void
 }
 export default function CSVViewer({ data, onError, onLoad }: Props) {
   const [rows, setRows] = useState<Record<string, string>[]>([])
@@ -45,7 +45,7 @@ export default function CSVViewer({ data, onError, onLoad }: Props) {
     } catch (e: any) {
       onError(e)
     }
-  }, [data])
+  }, [data, onError, onLoad])
 
   return <CustomTable columns={columns} data={rows} />
 }

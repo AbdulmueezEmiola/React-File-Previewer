@@ -10,15 +10,15 @@ import VideoViewer from './video-viewer'
 interface Props {
   mimeType: string
   src: string
-  onError: Function
-  onLoad: Function
+  onError: (e: any) => void
+  onLoad: () => void
 }
 export default function DriverSelector({ mimeType, src, onError, onLoad }: Props) {
   switch (mimeType) {
     case 'text/csv':
       return (
         <FromHTTP
-          children={(data) => <CSVViewer data={data} onLoad={onLoad} onError={(e) => onError(e)} />}
+          renderer={(data) => <CSVViewer data={data} onLoad={onLoad} onError={(e) => onError(e)} />}
           src={src}
           onError={(e) => onError(e)}
         />
@@ -26,7 +26,7 @@ export default function DriverSelector({ mimeType, src, onError, onLoad }: Props
     case 'text/plain':
       return (
         <FromHTTP
-          children={(data) => <HTMLViewer src={data} onLoad={onLoad} type='text' />}
+          renderer={(data) => <HTMLViewer src={data} onLoad={onLoad} type='text' />}
           src={src}
           onError={(e) => onError(e)}
         />
@@ -34,7 +34,7 @@ export default function DriverSelector({ mimeType, src, onError, onLoad }: Props
     case 'text/html':
       return (
         <FromHTTP
-          children={(data) => <HTMLViewer src={data} onLoad={onLoad} type='html' />}
+          renderer={(data) => <HTMLViewer src={data} onLoad={onLoad} type='html' />}
           src={src}
           onError={(e) => onError(e)}
         />
@@ -49,7 +49,7 @@ export default function DriverSelector({ mimeType, src, onError, onLoad }: Props
       return (
         <FromHTTP
           responseType='arraybuffer'
-          children={(data) => <PDFViewer src={data} onLoad={onLoad} />}
+          renderer={(data) => <PDFViewer src={data} onLoad={onLoad} />}
           src={src}
           onError={(e) => onError(e)}
         />

@@ -23,7 +23,15 @@ export default function Demo() {
         <br />
         <input type='text' onChange={(e) => setName(e.target.value)} value={name} />
       </div>
-      <FileViewer loader={undefined} mimeType={mimeType} src={file} onError={() => {}} fileName={name} />
+      <FileViewer
+        loader={undefined}
+        mimeType={mimeType}
+        src={file}
+        onError={() => {
+          console.log('Error')
+        }}
+        fileName={name}
+      />
     </>
   )
 }

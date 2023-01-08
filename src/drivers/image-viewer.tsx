@@ -3,7 +3,7 @@ import React, { ReactEventHandler } from 'react'
 interface Props {
   src: string
   onError: ReactEventHandler<HTMLImageElement>
-  onLoad: Function
+  onLoad: () => void
 }
 
 export default function ImageViewer({ src, onError, onLoad }: Props) {

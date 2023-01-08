@@ -3,7 +3,7 @@ import React, { ReactEventHandler } from 'react'
 interface Props {
   src: string
   onError: ReactEventHandler<HTMLVideoElement>
-  onLoad: Function
+  onLoad: () => void
 }
 export default function VideoViewer({ src, onError, onLoad }: Props) {
   return (

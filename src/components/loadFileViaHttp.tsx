@@ -2,14 +2,14 @@ import { ReactElement, useEffect, useState } from 'react'
 
 interface Props {
   src: string
-  children: (data: any) => ReactElement<any>
+  renderer: (data: any) => ReactElement<any>
   onError: (e: any) => void
   responseType?: XMLHttpRequestResponseType
 }
-export default function FromHTTP({ src, children, onError, responseType = 'arraybuffer' }: Props) {
+export default function FromHTTP({ src, renderer: children, onError, responseType = 'arraybuffer' }: Props) {
   const [data, setData] = useState('')
   useEffect(() => {
-    var req = new XMLHttpRequest()
+    const req = new XMLHttpRequest()
     req.open('GET', src, true)
     if (responseType) {
       req.responseType = responseType
@@ -22,6 +22,6 @@ export default function FromHTTP({ src, children, onError, responseType = 'array
       }
     }
     req.send()
-  }, [src])
+  }, [src, onError, responseType])
   return children(data)
 }

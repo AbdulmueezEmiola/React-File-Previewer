@@ -1,1 +1,1 @@
-declare module 'comma-separated-values';
+declare module 'comma-separated-values'

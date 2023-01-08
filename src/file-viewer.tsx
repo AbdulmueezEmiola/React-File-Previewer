@@ -8,7 +8,7 @@ interface Props {
   mimeType?: string
   fileName?: string
   src: string
-  onError: Function
+  onError: (e: any) => void
 }
 
 export default function FileViewer({ loader = <Loading />, mimeType, src, onError, fileName }: Props) {
@@ -33,7 +33,7 @@ export default function FileViewer({ loader = <Loading />, mimeType, src, onErro
     setShowLoading(true)
   }, [src, mimeType, fileName])
   if (showError) {
-    return <div>Unfortunately, this file can't be previewed</div>
+    return <div>Unfortunately, this file can&apos;t be previewed</div>
   }
   return (
     <>

@@ -2,7 +2,7 @@ import React from 'react'
 
 interface Props {
   src: string
-  onLoad: Function
+  onLoad: () => void
 }
 export default function PDFViewer({ src, onLoad }: Props) {
   return (

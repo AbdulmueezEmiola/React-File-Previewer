@@ -2,7 +2,7 @@ import React from 'react'
 
 interface Props {
   src: string
-  onLoad: Function
+  onLoad: () => void
   type: 'text' | 'html'
 }
 export default function HTMLViewer({ src, onLoad, type }: Props) {
