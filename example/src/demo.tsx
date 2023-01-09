@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import FileViewer from './file-viewer'
+import FileViewer from '@codesmith-99/react-file-preview'
 
 export default function Demo() {
   const [file, setFile] = useState<string>('')

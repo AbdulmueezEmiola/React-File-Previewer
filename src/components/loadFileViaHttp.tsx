@@ -6,7 +6,7 @@ interface Props {
   onError: (e: any) => void
   responseType?: XMLHttpRequestResponseType
 }
-export default function FromHTTP({ src, renderer: children, onError, responseType = 'arraybuffer' }: Props) {
+export default function FromHTTP({ src, renderer: children, onError, responseType }: Props) {
   const [data, setData] = useState('')
   useEffect(() => {
     const req = new XMLHttpRequest()
