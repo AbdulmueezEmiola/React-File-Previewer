@@ -7,5 +7,5 @@ export default function DefaultViewer({ onLoad }: Props) {
   useEffect(() => {
     onLoad()
   }, [onLoad])
-  return <div>File can't be previewed</div>
+  return <div>File can&apos;t be previewed</div>
 }
