@@ -27,8 +27,8 @@ export default function Demo() {
         loader={undefined}
         mimeType={mimeType}
         src={file}
-        onError={() => {
-          console.log('Error')
+        onError={(e) => {
+          console.log(e)
         }}
         fileName={name}
       />

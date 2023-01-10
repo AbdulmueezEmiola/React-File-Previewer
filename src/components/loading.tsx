@@ -10,6 +10,11 @@ const Container = styled.div`
       transform: rotate(360deg);
     }
   }
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .ldio-digmt7cfm5i div {
     box-sizing: border-box !important;
   }

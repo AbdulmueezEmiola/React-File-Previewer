@@ -61,9 +61,7 @@
   "dependencies": {
     "comma-separated-values": "^3.6.4",
     "mime-types": "^2.1.35",
-    "pdfjs-dist": "^3.1.81",
-    "react-table": "^7.8.0",
-    "styled-components": "^5.3.6",
-    "xlsx": "^0.18.5"
+    "react-data-grid": "^7.0.0-beta.20",
+    "styled-components": "^5.3.6"
   }
 }

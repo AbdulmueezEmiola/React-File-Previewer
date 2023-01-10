@@ -4,11 +4,11 @@ import MimeTypes from 'mime-types'
 import Loading from './components/loading'
 import styled from 'styled-components'
 interface Props {
-  loader: React.ReactNode
+  loader?: React.ReactNode
   mimeType?: string
   fileName?: string
   src: string
-  onError: (e: any) => void
+  onError?: (e: any) => void
 }
 
 const Container = styled.div`
@@ -21,7 +21,7 @@ export default function FileViewer({ loader = <Loading />, mimeType, src, onErro
   const handleError = (e: any) => {
     setShowLoading(false)
     setShowError(true)
-    onError(e)
+    onError && onError(e)
   }
   const handleLoad = () => {
     setShowLoading(false)

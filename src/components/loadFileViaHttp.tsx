@@ -9,6 +9,7 @@ interface Props {
 export default function FromHTTP({ src, renderer: children, onError, responseType }: Props) {
   const [data, setData] = useState('')
   useEffect(() => {
+    setData('')
     const req = new XMLHttpRequest()
     req.open('GET', src, true)
     if (responseType) {
@@ -18,10 +19,14 @@ export default function FromHTTP({ src, renderer: children, onError, responseTyp
       if (req.status >= 300) {
         onError(req)
       } else {
-        setData(req.response)
+        console.log(req.responseText)
+        setData(responseType ? req.response : req.responseText)
       }
     }
     req.send()
+    return () => {
+      req.abort()
+    }
   }, [src, onError, responseType])
   return children(data)
 }

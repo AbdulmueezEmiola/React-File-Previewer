@@ -2,6 +2,7 @@ import React from 'react'
 import FromHTTP from '../components/loadFileViaHttp'
 import AudioViewer from './audio-viewer'
 import CSVViewer from './csv-viewer'
+import DefaultViewer from './default-viewer'
 import DocumentViewer from './document-viewer'
 import HTMLViewer from './html-viewer'
 import ImageViewer from './image-viewer'
@@ -62,7 +63,6 @@ export default function DriverSelector({ mimeType, src, onError, onLoad }: Props
     case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
       return <DocumentViewer src={src} onLoad={onLoad} />
     default:
-      onLoad()
-      return <div></div>
+      return <DefaultViewer onLoad={onLoad} />
   }
 }

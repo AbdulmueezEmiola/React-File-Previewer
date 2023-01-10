@@ -1,14 +1,20 @@
 import React, { ReactEventHandler } from 'react'
+import styled from 'styled-components'
 
 interface Props {
   src: string
   onError: ReactEventHandler<HTMLVideoElement>
   onLoad: () => void
 }
+
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+`
 export default function VideoViewer({ src, onError, onLoad }: Props) {
   return (
-    <video src={src} controls onError={onError} onCanPlay={() => onLoad()}>
+    <Video src={src} controls onError={onError} onCanPlay={() => onLoad()}>
       Your browser does not support this audio tag
-    </video>
+    </Video>
   )
 }
