@@ -60,12 +60,9 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@codesmith-99/react-file-preview": "file:codesmith-99-react-file-preview-1.0.10.tgz",
     "comma-separated-values": "^3.6.4",
     "mime-types": "^2.1.35",
-    "react-table": "^7.8.0",
     "react-virtuoso": "^4.0.3",
-    "react-window": "^1.8.8",
     "styled-components": "^5.3.6"
   }
 }
