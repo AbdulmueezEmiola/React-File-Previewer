@@ -2,7 +2,7 @@ import React from 'react'
 
 interface Props {
   src: string
-  onLoad: () => void
+  onLoad: (value: boolean) => void
 }
 export default function DocumentViewer({ src, onLoad }: Props) {
   return (
@@ -11,7 +11,7 @@ export default function DocumentViewer({ src, onLoad }: Props) {
       title='msdoc-iframe'
       height='100%'
       width='100%'
-      onLoad={() => onLoad()}
+      onLoad={() => onLoad(true)}
       src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(src)}`}
     />
   )

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 
 interface Props {
-  onLoad: () => void
+  onLoad: (value: boolean) => void
 }
 export default function DefaultViewer({ onLoad }: Props) {
   useEffect(() => {
-    onLoad()
+    onLoad(true)
   }, [onLoad])
   return <div>File can&apos;t be previewed</div>
 }

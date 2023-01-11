@@ -4,7 +4,7 @@ import styled from 'styled-components'
 interface Props {
   src: string
   onError: ReactEventHandler<HTMLImageElement>
-  onLoad: () => void
+  onLoad: (value: boolean) => void
 }
 
 const Image = styled.img`
@@ -12,5 +12,5 @@ const Image = styled.img`
   height: 100%;
 `
 export default function ImageViewer({ src, onError, onLoad }: Props) {
-  return <Image src={src} onError={onError} onLoad={() => onLoad()} />
+  return <Image src={src} onError={onError} onLoad={() => onLoad(true)} />
 }

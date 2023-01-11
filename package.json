@@ -41,6 +41,7 @@
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
     "@types/react-table": "^7.7.14",
+    "@types/react-window": "^1.8.5",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
@@ -59,9 +60,12 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@codesmith-99/react-file-preview": "file:codesmith-99-react-file-preview-1.0.10.tgz",
     "comma-separated-values": "^3.6.4",
     "mime-types": "^2.1.35",
-    "react-data-grid": "^7.0.0-beta.20",
+    "react-table": "^7.8.0",
+    "react-virtuoso": "^4.0.3",
+    "react-window": "^1.8.8",
     "styled-components": "^5.3.6"
   }
 }

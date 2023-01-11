@@ -23,17 +23,17 @@ export default function FileViewer({ loader = <Loading />, mimeType, src, onErro
     setShowError(true)
     onError && onError(e)
   }
-  const handleLoad = () => {
-    setShowLoading(false)
+  const handleLoad = (e: boolean) => {
+    setShowLoading(!e)
   }
   useEffect(() => {
+    setShowLoading(true)
     setShowError(false)
     if (mimeType) {
       setFileType(mimeType)
     } else if (fileName) {
       setFileType(MimeTypes.lookup(fileName).toString())
     }
-    setShowLoading(true)
   }, [src, mimeType, fileName])
   if (showError) {
     return <div>Unfortunately, this file can&apos;t be previewed</div>
