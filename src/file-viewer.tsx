@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DriverSelector from './drivers/driver-selector'
-import MimeTypes from 'mime-types'
+import MimeTypes from 'mime'
 import Loading from './components/loading'
 import styled from 'styled-components'
 interface Props {
@@ -32,7 +32,7 @@ export default function FileViewer({ loader = <Loading />, mimeType, src, onErro
     if (mimeType) {
       setFileType(mimeType)
     } else if (fileName) {
-      setFileType(MimeTypes.lookup(fileName).toString())
+      setFileType(MimeTypes.getType(fileName) ?? '')
     }
   }, [src, mimeType, fileName])
   if (showError) {
