@@ -11,5 +11,5 @@ const Iframe = styled.iframe`
   height: 100%;
 `
 export default function IFrameViewer({ src, onLoad }: Props) {
-  return <Iframe src={src} onLoad={() => onLoad(true)} sandbox='allow-same-origin'></Iframe>
+  return <Iframe src={src} onLoad={() => onLoad(true)} sandbox='allow-same-origin allow-download'></Iframe>
 }

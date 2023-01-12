@@ -13,6 +13,10 @@ interface Props {
 
 const Container = styled.div`
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 `
 export default function FileViewer({ loader = <Loading />, mimeType, src, onError, fileName }: Props) {
   const [showError, setShowError] = useState(false)

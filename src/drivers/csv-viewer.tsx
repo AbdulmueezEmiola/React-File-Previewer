@@ -35,7 +35,7 @@ const CSVViewer = ({ src, onError, onLoad }: Props) => {
 
   return (
     <TableVirtuoso
-      style={{ height: '100%' }}
+      style={{ height: '100%', whiteSpace: 'nowrap' }}
       data={data}
       itemContent={(index, row: string[]) => (
         <>
