@@ -1,4 +1,4 @@
-import React, { ReactEventHandler } from 'react'
+import { ReactEventHandler } from 'react'
 import styled from 'styled-components'
 
 interface Props {

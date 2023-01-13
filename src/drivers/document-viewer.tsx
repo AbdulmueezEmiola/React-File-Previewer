@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface Props {
   src: string
   onLoad: (value: boolean) => void
