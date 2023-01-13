@@ -1,6 +1,6 @@
 {
   "name": "@codesmith-99/react-file-preview",
-  "version": "1.0.16",
+  "version": "1.0.20",
   "description": "",
   "source": "src/index.ts",
   "main": "dist/main.js",
