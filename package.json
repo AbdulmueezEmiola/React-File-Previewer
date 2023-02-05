@@ -1,6 +1,6 @@
 {
-  "name": "@codesmith-99/react-file-preview",
-  "version": "1.0.20",
+  "name": "react-file-preview",
+  "version": "1.0.0",
   "description": "",
   "source": "src/index.ts",
   "main": "dist/main.js",
@@ -31,7 +31,16 @@
     "react-file-previewer",
     "react-file-viewer",
     "file",
-    "preview"
+    "preview",
+    "url viewer",
+    "csv viewer",
+    "text viewer",
+    "pdf viewer",
+    "html viewer",
+    "image viewer",
+    "audio viewer",
+    "video viewer",
+    "doc viewer"
   ],
   "author": "Abdulmueez Emiola",
   "license": "MIT",
