@@ -15,7 +15,7 @@ The url previewer is built using native html  elements for previewing url of fil
 # Installation
 
 ```python
-npm i react-file-preview
+npm i @codesmith-99/react-file-preview
 ```
 
 # Usage
