@@ -28,7 +28,7 @@ export default function DriverSelector({ mimeType, src, onError, onLoad }: Props
     case mimeType.startsWith('audio/') && mimeType:
       return <AudioViewer src={src} onLoad={() => onLoad(true)} onError={(e) => onError(e)} />
     case mimeType.startsWith('video/') && mimeType:
-      return <VideoViewer src={src} onLoad={() => onLoad(true)} onError={(e) => onError(e)} />
+      return <VideoViewer src={src} onLoad={() => onLoad(true)} onError={(e) => onError(e)} mimeType={mimeType} />
     case 'application/msword':
     case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
     case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
