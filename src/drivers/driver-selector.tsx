@@ -26,7 +26,7 @@ export default function DriverSelector({ mimeType, src, onError, onLoad }: Props
     case mimeType.startsWith('image/') && mimeType:
       return <ImageViewer src={src} onLoad={onLoad} onError={(e) => onError(e)} />
     case mimeType.startsWith('audio/') && mimeType:
-      return <AudioViewer src={src} onLoad={() => onLoad(true)} onError={(e) => onError(e)} />
+      return <AudioViewer src={src} onLoad={() => onLoad(true)} onError={(e) => onError(e)} mimeType={mimeType} />
     case mimeType.startsWith('video/') && mimeType:
       return <VideoViewer src={src} onLoad={() => onLoad(true)} onError={(e) => onError(e)} mimeType={mimeType} />
     case 'application/msword':
