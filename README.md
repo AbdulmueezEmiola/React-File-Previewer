@@ -12,6 +12,7 @@ The url previewer is built using native html  elements for previewing url of fil
 * video files (supported by the browser)
 * docx, xlsx, pptx files
 
+Also, for unsupported files or when an error occurs, it falls back to using an icon.
 # Installation
 
 ```python
