@@ -10,7 +10,12 @@ export default function DefaultViewer({ onLoad, mimeType }: Props) {
     onLoad(true)
   }, [onLoad])
   return (
-    <div>
+    <div
+      style={{
+        width: '50px',
+        height: '50px',
+      }}
+    >
       <FileIcon extension={mimeType} {...defaultStyles[mimeType as DefaultExtensionType]} />
     </div>
   )
