@@ -3,6 +3,8 @@ import DriverSelector from './drivers/driver-selector'
 import MimeTypes from 'mime'
 import Loading from './components/loading'
 import styled from 'styled-components'
+import { FileIcon, defaultStyles } from 'react-file-icon'
+import { DefaultExtensionType } from 'react-file-icon'
 interface Props {
   loader?: React.ReactNode
   mimeType?: string
@@ -40,7 +42,11 @@ export default function FileViewer({ loader = <Loading />, mimeType, src, onErro
     }
   }, [src, mimeType, fileName])
   if (showError) {
-    return <div>Unfortunately, this file can&apos;t be previewed</div>
+    return (
+      <div>
+        <FileIcon extension={fileType} {...defaultStyles[fileType as DefaultExtensionType]} />
+      </div>
+    )
   }
   return (
     <>

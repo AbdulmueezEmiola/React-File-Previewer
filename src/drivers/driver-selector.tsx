@@ -37,6 +37,6 @@ export default function DriverSelector({ mimeType, src, onError, onLoad }: Props
     case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
       return <DocumentViewer src={src} onLoad={onLoad} />
     default:
-      return <DefaultViewer onLoad={onLoad} />
+      return <DefaultViewer onLoad={onLoad} mimeType={mimeType} />
   }
 }

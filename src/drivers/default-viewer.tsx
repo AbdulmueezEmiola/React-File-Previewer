@@ -1,11 +1,17 @@
 import { useEffect } from 'react'
+import { DefaultExtensionType, FileIcon, defaultStyles } from 'react-file-icon'
 
 interface Props {
   onLoad: (value: boolean) => void
+  mimeType: string
 }
-export default function DefaultViewer({ onLoad }: Props) {
+export default function DefaultViewer({ onLoad, mimeType }: Props) {
   useEffect(() => {
     onLoad(true)
   }, [onLoad])
-  return <div>File can&apos;t be previewed</div>
+  return (
+    <div>
+      <FileIcon extension={mimeType} {...defaultStyles[mimeType as DefaultExtensionType]} />
+    </div>
+  )
 }
