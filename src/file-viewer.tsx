@@ -49,7 +49,10 @@ export default function FileViewer({ loader = <Loading />, mimeType, src, onErro
           height: '50px',
         }}
       >
-        <FileIcon extension={fileType} {...defaultStyles[fileType as DefaultExtensionType]} />
+        <FileIcon
+          extension={MimeTypes.getExtension(fileType) ?? ''}
+          {...defaultStyles[MimeTypes.getExtension(fileType) as DefaultExtensionType]}
+        />
       </div>
     )
   }

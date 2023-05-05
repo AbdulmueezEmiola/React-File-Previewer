@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { DefaultExtensionType, FileIcon, defaultStyles } from 'react-file-icon'
+import MimeTypes from 'mime'
 
 interface Props {
   onLoad: (value: boolean) => void
@@ -16,7 +17,10 @@ export default function DefaultViewer({ onLoad, mimeType }: Props) {
         height: '50px',
       }}
     >
-      <FileIcon extension={mimeType} {...defaultStyles[mimeType as DefaultExtensionType]} />
+      <FileIcon
+        extension={MimeTypes.getExtension(mimeType) ?? ''}
+        {...defaultStyles[MimeTypes.getExtension(mimeType) as DefaultExtensionType]}
+      />
     </div>
   )
 }
