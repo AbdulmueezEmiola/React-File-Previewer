@@ -43,7 +43,12 @@ export default function FileViewer({ loader = <Loading />, mimeType, src, onErro
   }, [src, mimeType, fileName])
   if (showError) {
     return (
-      <div>
+      <div
+        style={{
+          width: '50px',
+          height: '50px',
+        }}
+      >
         <FileIcon extension={fileType} {...defaultStyles[fileType as DefaultExtensionType]} />
       </div>
     )
