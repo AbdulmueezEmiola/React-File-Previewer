@@ -14,7 +14,7 @@ const Video = styled.video`
 `
 export default function VideoViewer({ src, onError, onLoad, mimeType }: Props) {
   return (
-    <Video controls onError={onError} onCanPlay={() => onLoad(true)}>
+    <Video controls onError={onError} onCanPlay={() => onLoad(true)} autoPlay>
       <source src={src} type={mimeType}></source>
       Your browser does not support this audio tag
     </Video>

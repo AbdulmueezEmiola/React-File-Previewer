@@ -12,7 +12,7 @@ const Audio = styled.audio`
 `
 export default function AudioViewer({ src, onError, onLoad, mimeType }: Props) {
   return (
-    <Audio controls className='audio' onError={onError} onCanPlay={onLoad}>
+    <Audio controls className='audio' onError={onError} onCanPlay={onLoad} autoPlay>
       <source src={src} type={mimeType} />
       Your browser does not support this audio tag
     </Audio>
