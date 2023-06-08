@@ -12,8 +12,9 @@ interface Props {
   src: string
   onError: (e: any) => void
   onLoad: (value: boolean) => void
+  autoPlay: boolean
 }
-export default function DriverSelector({ mimeType, src, onError, onLoad }: Props) {
+export default function DriverSelector({ mimeType, src, onError, onLoad, autoPlay }: Props) {
   switch (mimeType) {
     case 'text/csv':
       return <CSVViewer onLoad={onLoad} onError={(e) => onError(e)} src={src} />
@@ -26,9 +27,25 @@ export default function DriverSelector({ mimeType, src, onError, onLoad }: Props
     case mimeType.startsWith('image/') && mimeType:
       return <ImageViewer src={src} onLoad={onLoad} onError={(e) => onError(e)} />
     case mimeType.startsWith('audio/') && mimeType:
-      return <AudioViewer src={src} onLoad={() => onLoad(true)} onError={(e) => onError(e)} mimeType={mimeType} />
+      return (
+        <AudioViewer
+          src={src}
+          onLoad={() => onLoad(true)}
+          onError={(e) => onError(e)}
+          mimeType={mimeType}
+          autoPlay={autoPlay}
+        />
+      )
     case mimeType.startsWith('video/') && mimeType:
-      return <VideoViewer src={src} onLoad={() => onLoad(true)} onError={(e) => onError(e)} mimeType={mimeType} />
+      return (
+        <VideoViewer
+          src={src}
+          onLoad={() => onLoad(true)}
+          onError={(e) => onError(e)}
+          mimeType={mimeType}
+          autoPlay={autoPlay}
+        />
+      )
     case 'application/msword':
     case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
     case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':

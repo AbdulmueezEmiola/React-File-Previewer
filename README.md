@@ -81,3 +81,4 @@ export default function Demo() {
 | filename      |  string (optional) | The file extension is used to specify the mimetype of the file and determine how to preview the url, alternatively mimetype can be used |
 | loader |  ReactNode (optional) | A loader to replace the default loader used by the project |
 | onError      |  (e: any) => void (optional) | A callback that can be used to detect if an error has occurred in the loading of the files|
+| autoPlay | boolean | To autoplay a video or an audio

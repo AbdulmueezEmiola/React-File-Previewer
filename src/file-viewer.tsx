@@ -11,6 +11,7 @@ interface Props {
   fileName?: string
   src: string
   onError?: (e: any) => void
+  autoPlay?: boolean
 }
 
 const Container = styled.div`
@@ -20,7 +21,7 @@ const Container = styled.div`
   align-items: center;
   background-color: white;
 `
-export default function FileViewer({ loader = <Loading />, mimeType, src, onError, fileName }: Props) {
+export default function FileViewer({ loader = <Loading />, mimeType, src, onError, fileName, autoPlay }: Props) {
   const [showError, setShowError] = useState(false)
   const [showLoading, setShowLoading] = useState(false)
   const [fileType, setFileType] = useState('')
@@ -65,7 +66,13 @@ export default function FileViewer({ loader = <Loading />, mimeType, src, onErro
           visibility: showLoading ? 'hidden' : 'visible',
         }}
       >
-        <DriverSelector mimeType={fileType} src={src} onLoad={handleLoad} onError={handleError} />
+        <DriverSelector
+          mimeType={fileType}
+          src={src}
+          onLoad={handleLoad}
+          onError={handleError}
+          autoPlay={autoPlay ?? false}
+        />
       </Container>
     </>
   )
