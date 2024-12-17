@@ -5,6 +5,7 @@ import Loading from './components/loading'
 import styled from 'styled-components'
 import { FileIcon, defaultStyles } from 'react-file-icon'
 import { DefaultExtensionType } from 'react-file-icon'
+
 interface Props {
   loader?: React.ReactNode
   mimeType?: string
@@ -12,6 +13,7 @@ interface Props {
   src: string
   onError?: (e: any) => void
   autoPlay?: boolean
+  containerErrorStyle?: React.CSSProperties
 }
 
 const Container = styled.div`
@@ -21,7 +23,15 @@ const Container = styled.div`
   align-items: center;
   background-color: white;
 `
-export default function FileViewer({ loader = <Loading />, mimeType, src, onError, fileName, autoPlay }: Props) {
+export default function FileViewer({
+  loader = <Loading />,
+  mimeType,
+  src,
+  onError,
+  fileName,
+  autoPlay,
+  containerErrorStyle,
+}: Props) {
   const [showError, setShowError] = useState(false)
   const [showLoading, setShowLoading] = useState(false)
   const [fileType, setFileType] = useState('')
@@ -45,10 +55,13 @@ export default function FileViewer({ loader = <Loading />, mimeType, src, onErro
   if (showError) {
     return (
       <div
-        style={{
+        style={
+          {
           width: '50px',
           height: '50px',
-        }}
+          ...(containerErrorStyle || {})
+        }
+        }
       >
         <FileIcon
           extension={MimeTypes.getExtension(fileType) ?? ''}
