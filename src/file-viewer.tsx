@@ -56,12 +56,11 @@ export default function FileViewer({
     return (
       <div
         style={
-          containerErrorStyle
-            ? containerErrorStyle
-            : {
-                width: '50px',
-                height: '50px',
-              }
+          {
+          width: '50px',
+          height: '50px',
+          ...(containerErrorStyle || {})
+        }
         }
       >
         <FileIcon
