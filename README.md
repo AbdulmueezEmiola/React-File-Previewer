@@ -74,11 +74,12 @@ export default function Demo() {
 
 # FileViewer Props
 
-| Prop name        |  Type |  Description |
-|--------------|:-----:|-----------:|
-| src      |  string | The url of the file to be previewed |
-| mimetype      |  string (optional) | Used to specify the mimetype of the file and determine how to preview the url, alternatively filename can be used |
-| filename      |  string (optional) | The file extension is used to specify the mimetype of the file and determine how to preview the url, alternatively mimetype can be used |
-| loader |  ReactNode (optional) | A loader to replace the default loader used by the project |
-| onError      |  (e: any) => void (optional) | A callback that can be used to detect if an error has occurred in the loading of the files|
-| autoPlay | boolean | To autoplay a video or an audio
+| Prop name        |            Type             |  Description |
+|--------------|:---------------------------:|-----------:|
+| src      |           string            | The url of the file to be previewed |
+| mimetype      |      string (optional)      | Used to specify the mimetype of the file and determine how to preview the url, alternatively filename can be used |
+| filename      |      string (optional)      | The file extension is used to specify the mimetype of the file and determine how to preview the url, alternatively mimetype can be used |
+| loader |    ReactNode (optional)     | A loader to replace the default loader used by the project |
+| onError      | (e: any) => void (optional) | A callback that can be used to detect if an error has occurred in the loading of the files|
+| autoPlay |           boolean           | To autoplay a video or an audio
+| containerErrorStyle |     React.CSSProperties     | The style of the container when an error occurs
